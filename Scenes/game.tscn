@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpvtxvus7rbhj"]
+
+[node name="game" unique_id=430819827]
+
+[node name="Small Screature6" parent="." index="11" unique_id=1747916170]
+position = Vector2(-275, 415)

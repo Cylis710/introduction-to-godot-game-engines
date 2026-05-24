@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://diyaeohs0t58y"]
+
+[ext_resource type="Script" uid="uid://d3hkeb4broolg" path="res://scripts/small_screature.gd" id="1_b06k8"]
+[ext_resource type="Texture2D" uid="uid://b7jjh7h8xqunq" path="res://2D Resources/enemies/Purple Slime Spritesheet.png" id="1_ro7yh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b06k8"]
+atlas = ExtResource("1_ro7yh")
+region = Rect2(40, 0, 40, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvar5"]
+atlas = ExtResource("1_ro7yh")
+region = Rect2(40, 21, 40, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83fhk"]
+atlas = ExtResource("1_ro7yh")
+region = Rect2(33, 0, 33, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwkcx"]
+atlas = ExtResource("1_ro7yh")
+region = Rect2(33, 16, 33, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rseqx"]
+atlas = ExtResource("1_ro7yh")
+region = Rect2(33, 32, 33, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ado"]
+atlas = ExtResource("1_ro7yh")
+region = Rect2(33, 48, 33, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i82gr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b06k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvar5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83fhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwkcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rseqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5ado")
+}],
+"loop": true,
+"name": &"single idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57n68"]
+size = Vector2(15.714272, 12.000002)
+
+[node name="Small Screature" type="Node2D" unique_id=199397124]
+script = ExtResource("1_b06k8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=994297108]
+position = Vector2(2.861023e-06, -1)
+scale = Vector2(0.19090909, 0.16666666)
+sprite_frames = SubResource("SpriteFrames_i82gr")
+animation = &"single idle"
+autoplay = "single idle"
+frame = 1
+frame_progress = 0.108983174
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=1816376261]
+z_index = 4
+texture_filter = 1
+position = Vector2(7.857128, 0)
+scale = Vector2(1.0000012, 1)
+shape = SubResource("RectangleShape2D_57n68")
